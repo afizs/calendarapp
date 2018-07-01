@@ -1,0 +1,22 @@
+{% extends 'myapp/base.html' %}
+{% block content %}
+<br />
+<div class="row">
+  <div class="col-lg-6">
+    <h2>Add New Entry</h2>
+  </div>
+  <div class="col-lg-6">
+    <a class="btn btn-success" href="{% url 'index' %}" >Go Back</a>
+  </div>
+</div>
+<hr />
+<form method="POST">
+  {% csrf_token %}
+  {% for field in form %}
+    {{ field.errors}}
+    <label>{{field.label}}</label>
+    <input placeholder="{{field.label}}" name="{{ field.name }}" class="form-control" />
+  {% endfor %}
+  <button type="submit">Submit</button>
+</form>
+{% endblock%}

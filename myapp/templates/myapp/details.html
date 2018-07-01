@@ -1,0 +1,8 @@
+{% extends 'myapp/base.html' %}
+{% block content %}
+<div class="jumbotron">
+  <h1 class="display-3">{{entry.name}}</h1>
+  <p class="lead">{{ entry.description}}</p>
+  <a class="btn btn-primary btn-lg" href="{% url 'calender' %}" role="button">Go Back</a>
+</div>
+{% endblock %}
